@@ -39,10 +39,10 @@
 
 <!--soumettre afficher les donnees de mon formulaire -->
 
-<p><?= isset($email) ? $email : ''?></p>
-<p><?= isset($subject) ? $subject : ''?></p>
-<p><?= isset($message) ? $message : ''?></p>
+<!--<p><?= isset($email) ? $email : ''?></p>
+    <p><?= isset($subject) ? $subject : ''?></p>
+    <p><?= isset($message) ? $message : ''?></p>
 
-
+-->
 </body>
 </html>

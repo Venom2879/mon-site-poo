@@ -13,11 +13,14 @@
 <body>
 
 <h1><?= $title ?></h1><!--pas d'erreur deja appeler en HomeController-->
-<h2><?= $description ?></h2>
-<h3><?= $age ?></h3>
+
+<h2>List of users</h2>
+<?php foreach ($users as $user): ?>
+    <p><?= $user['username'] ?></p>
+<?php endforeach ?>
 
 <img src="images/img.jpg" alt="" width="200">
 
-<script src="assets/js/main.js"></script>
+<script src="assets/js/script.js"></script>
 </body>
 </html>
