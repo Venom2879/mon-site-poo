@@ -16,7 +16,7 @@
 <?php require 'partials/_navbar.php'; ?>
 
 <main class="container">
-    <?= $contentfile ?>
+    <?= $contentFile ?>
 </main>
 
 <?php require 'partials/_footer.php'; ?>

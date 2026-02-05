@@ -2,7 +2,8 @@
 
 namespace App\Core;
 
-class App {
+class App
+{
 
     public static function run()
     {
@@ -12,9 +13,9 @@ class App {
          * @parmas $routes array<string, array<string, string>>
          */
         $routes = [
-            '/' => [\App\Controller\HomeController::class, 'index'],// '/' = clé
-            '/contact' => [\App\Controller\HomeController::class, // class appelant la methode
-                'contact']//valeur tableau []
+            '/' => [\App\Controller\HomeController::class, 'index'],
+            '/contact' => [\App\Controller\ContactController::class, 'contact'],
+            '/product/new' => [\App\Controller\ProductController::class, 'new']
         ];
 
         if (isset($routes[$path])) {

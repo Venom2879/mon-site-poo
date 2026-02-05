@@ -8,9 +8,9 @@
     </div>
 
     <div>
-        <label for="subjet">Subject</label>
-        <select name="subject" id="subect">
-            <option value="">Remboursement</option>
+        <label for="subject">Subject</label>
+        <select name="subject" id="subject">
+            <option value="remboursement">Remboursement</option>
             <option value="help">Help</option>
             <option value="problem">Problème</option>
         </select>
@@ -25,12 +25,5 @@
 
 </form>
 
-<!--soumettre afficher les donnees de mon formulaire -->
-
-<!--<p><?= isset($email) ? $email : ''?></p>
-    <p><?= isset($subject) ? $subject : ''?></p>
-    <p><?= isset($message) ? $message : ''?></p>
-
--->
 
 
