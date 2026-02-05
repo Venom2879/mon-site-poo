@@ -9,7 +9,11 @@ abstract class Controller
     {
         extract($params);
 
+        ob_start();
         require dirname(__DIR__) . '/../template/' . $view . '.php';// ne pas oublier le .php
+        $contentfile = ob_get_clean();
+
+        require dirname(__DIR__) . '/../template/layout.php';
     }
 
     protected function redirect(string $url): void {

@@ -10,10 +10,10 @@ class HomeController extends Controller
     public function index(): void
     {
 
-        $db = new Database();
+        $db = new Database();//connecte la BDD
 
-        $query = $db->prepare("SELECT * FROM user");
-        $query->execute();
+        $query = $db->prepare("SELECT * FROM user");//requete
+        $query->execute();//execute
 
         $user = $query->fetchAll();
         //print_r($users);
@@ -39,7 +39,7 @@ class HomeController extends Controller
 
             $this->redirect('/contact');
         }
-        //$_GET, $_POST
+        //$_GET, $_POST ------------------------------Rendre une page
         //print_r($_POST);
 
         //if ($_SERVER['REQUEST_METHOD'] == 'POST') {
