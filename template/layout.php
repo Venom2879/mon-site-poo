@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Document</title>
+    <title><?= $title ?></title>
 
     <link rel="stylesheet" href="/assets/css/reset.css">
     <link rel="stylesheet" href="/assets/css/main.css">
@@ -16,7 +16,7 @@
 <?php require 'partials/_navbar.php'; ?>
 
 <main class="container">
-    <?= $contentfile ?>
+    <?= $contentFile ?>
 </main>
 
 <?php require 'partials/_footer.php'; ?>

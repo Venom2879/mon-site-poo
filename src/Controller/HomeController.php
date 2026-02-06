@@ -4,24 +4,19 @@ namespace App\Controller;
 
 use App\Core\Controller;
 use App\Core\Database;
+use App\Repository\UserRepository;
 
 class HomeController extends Controller
 {
     public function index(): void
     {
+        $userRepository = new UserRepository();
+        $users = $userRepository->findAll();
 
-        $db = new Database();//connecte la BDD
-
-        $query = $db->prepare("SELECT * FROM user");//requete
-        $query->execute();//execute
-
-        $user = $query->fetchAll();
-        //print_r($users);
-        //var_dump($users);
 
         $this->render('home', [
             'title' => 'Page Home',// $title = 'Page Home'
-            'users' => $user
+            'users' => $users
         ]);
     }
 
@@ -43,13 +38,13 @@ class HomeController extends Controller
         //print_r($_POST);
 
         //if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            //$this->render('contact', [
-            //    'title' => 'Page Contact',
-            //  'email' => $_POST ['email'],
-            //'subject' => $_POST ['subject'],
-            //'message' => $_POST ['message'],
-            //]);
-         //   return;
+        //$this->render('contact', [
+        //    'title' => 'Page Contact',
+        //  'email' => $_POST ['email'],
+        //'subject' => $_POST ['subject'],
+        //'message' => $_POST ['message'],
+        //]);
+        //   return;
         //}
 
         $this->render('contact', [
