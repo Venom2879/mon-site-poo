@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Core\Database;
+use App\Model\Product;
 
 class ProductRepository
 {
@@ -12,5 +13,22 @@ class ProductRepository
     {
         $this->db = new Database();
 
+    }
+    public function findById(int $id): ?Product
+    {
+        $query = $this->db->prepare("SELECT * FROM product WHERE id = :id");
+        $query->setFetchMode(\PDO::FETCH_CLASS, Product::class);
+        $query->execute(['id' => $id]);
+
+        return $query->fetch() ?: null;
+    }
+
+    public function findBySlug(string $slug): ?Product
+    {
+        $query = $this->db->prepare("SELECT * FROM product WHERE slug = :slug");
+        $query->setFetchMode(\PDO::FETCH_CLASS, Product::class);
+        $query->execute(['slug' => $slug]);
+
+        return $query->fetch() ?: null;
     }
 }

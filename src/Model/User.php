@@ -2,9 +2,11 @@
 
 namespace App\Model;
 
+use DateTime;
+
 class User
 {
-    private int $id;
+    private ?int $id = null;
 
     private string $username;
 
@@ -12,25 +14,29 @@ class User
 
     private string $email;
 
-    public function getId(): int
+    private string $created_at;
+
+    private string $updated_at;
+
+    public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function setId(int $id): User
+    public function setId(?int $id): User
     {
         $this->id = $id;
         return $this;
     }
 
-    public function getEmail(): string
+    public function getUsername(): string
     {
-        return $this->email;
+        return $this->username;
     }
 
-    public function setEmail(string $email): User
+    public function setUsername(string $username): User
     {
-        $this->email = $email;
+        $this->username = $username;
         return $this;
     }
 
@@ -45,14 +51,37 @@ class User
         return $this;
     }
 
-    public function getUsername(): string
+    public function getEmail(): string
     {
-        return $this->username;
+        return $this->email;
     }
 
-    public function setUsername(string $username): User
+    public function setEmail(string $email): User
     {
-        $this->username = $username;
+        $this->email = $email;
         return $this;
     }
+
+    public function getCreatedAt(): DateTime
+    {
+        return new DateTime($this->created_at);
+    }
+
+    public function setCreatedAt(string $created_at): User
+    {
+        $this->created_at = $created_at;
+        return $this;
+    }
+
+    public function getUpdatedAt(): DateTime
+    {
+        return new DateTime($this->updated_at);
+    }
+
+    public function setUpdatedAt(string $updated_at): User
+    {
+        $this->updated_at = $updated_at;
+        return $this;
+    }
+
 }
